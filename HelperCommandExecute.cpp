@@ -23,13 +23,6 @@ HINSTANCE HelperCommandExecute::_appHInstance = NULL;
 BOOL HelperCommandExecute::_hooksInstalled = FALSE;
 
 
-void HelperCommandExecute::Initialize(HINSTANCE hInstance)
-{
-	_dllHandle = NULL;
-	_targetWindowHandle = NULL;
-	_appHInstance = hInstance;
-}
-
 
 void HelperCommandExecute::SetTargetWindow(HWND tiHelperWindowHandle)
 {
