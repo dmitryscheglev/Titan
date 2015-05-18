@@ -31,16 +31,6 @@ void HelperCommandExecute::Initialize(HINSTANCE hInstance)
 }
 
 
-void HelperCommandExecute::SetTargetWindow(HWND tiHelperWindowHandle)
-{
-	_targetWindowHandle = tiHelperWindowHandle;
-
-	if (!_hooksInstalled && GetSubscribersCount() > 0)
-		InstallHooks(_targetWindowHandle);
-}
-
-
-
 void HelperCommandExecute::Uninitialize()
 {
 	RemoveHooks(_targetWindowHandle);
