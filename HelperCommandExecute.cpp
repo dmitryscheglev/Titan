@@ -41,12 +41,6 @@ void HelperCommandExecute::SetTargetWindow(HWND tiHelperWindowHandle)
 
 
 
-void HelperCommandExecute::Uninitialize()
-{
-	RemoveHooks(_targetWindowHandle);
-}
-
-
 void HelperCommandExecute::BroadcastMessage(UINT message, WPARAM wParam, LPARAM lParam)
 {
 	Lock l(_subscribersLock);
