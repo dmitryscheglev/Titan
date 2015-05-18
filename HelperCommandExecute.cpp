@@ -47,16 +47,6 @@ void HelperCommandExecute::Uninitialize()
 }
 
 
-void HelperCommandExecute::BroadcastMessage(UINT message, WPARAM wParam, LPARAM lParam)
-{
-	Lock l(_subscribersLock);
-	SubscriberListIterator it(&_subscribers);
-	while (it.next())
-	{
-		if (it.data() != NULL)
-			::PostMessage(*it.data(), message, wParam, lParam);
-	}
-}
 
 BOOL CALLBACK EnumThreadWndProc_BlockCheckPlugin(HWND hwnd, LPARAM lParam)
 {
